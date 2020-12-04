@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   db:
     image: mariadb
@@ -8,10 +6,13 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: Test1234
-      MYSQL_USER: hosting
+      MYSQL_USER: database
       MYSQL_PASSWORD: Test1234
+      MYSQL_DATABASE: easystock
     ports:
       - '3306:3306'
+    expose:
+      - '3306'
 
   api:
     depends_on:
@@ -29,6 +30,6 @@ services:
       - 8183:80
     environment:
       PMA_HOST: db
-      PMA_USER: root
+      PMA_USER: database
       PMA_PASSWORD: Test1234
       PMA_ARBITRARY: 1
