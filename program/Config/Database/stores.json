@@ -1,0 +1,9 @@
+
+[{
+    "Name" : "Store_name",
+    "Type" : "VARCHAR(255)"
+},
+{
+    "Name" : "Created_time",
+    "Type" : "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+}]

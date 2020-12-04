@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  db:
+    image: mariadb
+    volumes:
+      - ./database:/var/lib/mysql/
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Test1234
+      MYSQL_USER: hosting
+      MYSQL_PASSWORD: Test1234
+    ports:
+      - '3306:3306'
+
+  api:
+    depends_on:
+      - db
+    links:
+      - db
+    build: .
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: sqladmin
+    links:
+      - db
+    ports:
+      - 8183:80
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: Test1234
+      PMA_ARBITRARY: 1

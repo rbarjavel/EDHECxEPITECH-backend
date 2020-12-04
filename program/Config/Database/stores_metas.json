@@ -1,0 +1,17 @@
+
+[{
+    "Name" : "Parent_id",
+    "Type" : "INT"
+},
+{
+    "Name" : "Meta_key",
+    "Type" : "VARCHAR(255)"
+},
+{
+    "Name" : "Meta_value",
+    "Type" : "VARCHAR(255)"
+},
+{
+    "Name" : "Created_time",
+    "Type" : "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+}]
