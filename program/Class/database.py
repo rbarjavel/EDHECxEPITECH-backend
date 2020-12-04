@@ -10,18 +10,16 @@ class Database:
         self.initTables()
     
     def initTables(self):
-        self.datacentersDatabaseName = "datacenters"
-        self.storageDatabaseName = "storages"
-        self.hostingDatabaseName = "hostings"
-        self.datacentersDatabaseMetaName = "datacenters_metas"
-        self.storageDatabaseMetaName = "storages_metas"
-        self.hostingDatabaseMetaName = "hostings_metas"
-        self.createtable(self.datacentersDatabaseName)
-        self.createtable(self.storageDatabaseName)
-        self.createtable(self.hostingDatabaseName)
-        self.createtable(self.datacentersDatabaseMetaName)
-        self.createtable(self.storageDatabaseMetaName)
-        self.createtable(self.hostingDatabaseMetaName)
+        elements = {
+            "products_metas",
+            "products",
+            "stores_metas",
+            "stores",
+            "users_metas",
+            "users"
+        }
+        for element in elements:
+            self.createtable(element)
 
     def createElement(self, elements, tableName):
         keys = "("
@@ -84,10 +82,11 @@ class Database:
                 self.conn = mariadb.connect(
                     host='db',
                     port=3306,
-                    user='root',
+                    user='database',
                     password='Test1234',
-                    database='hosting'
+                    database='easystock'
                 )
                 break
             except:
                 print(__class__.__name__ + ": failed to connect to database")
+            time.sleep(1)
