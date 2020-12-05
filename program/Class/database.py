@@ -35,7 +35,6 @@ class Database:
         keys = keys + ')'
         values = values + ')'
         command = "INSERT INTO " + tableName + " " + keys + " " + "VALUES " + values
-        print(command)
         self.cursor.execute(command, elements)
         self.conn.commit()
         return (self.cursor.lastrowid)
@@ -71,10 +70,20 @@ class Database:
         self.cursor.execute(command)
         return(self.cursor.fetchone())
 
+    def getAllElements(self, tableName):
+        command = "SELECT * FROM "  + tableName
+        self.cursor.execute(command)
+        return(self.cursor.fetchall())
+    
+    def getAllMetaElements(self, tableName, id):
+        command = "SELECT * FROM "  + tableName +  " WHERE Parent_id =" + str(id)
+        self.cursor.execute(command)
+        return(self.cursor.fetchall())
+
     def getMetaElements(self, tableName, id, meta_key):
         command = "SELECT * FROM "  + tableName +  " WHERE Parent_id =" + str(id) + " AND Meta_key ='" + meta_key + "'"
         self.cursor.execute(command)
-        return(self.cursor.fetchone())
+        return(self.cursor.fetchall())
 
     def connect(self):
         while(1):
@@ -89,4 +98,4 @@ class Database:
                 break
             except:
                 print(__class__.__name__ + ": failed to connect to database")
-            time.sleep(1)
+            time.sleep(0.5)
