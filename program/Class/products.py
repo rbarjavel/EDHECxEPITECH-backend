@@ -23,3 +23,19 @@ class Product:
             for product_meta in product_metas:
                 product[product_meta["Meta_key"]] = product_meta["Meta_value"]
         return(products)
+    
+    def sortProduct(self, categories):
+        availableProduct = []
+        products = self.getProduct()
+        verity = 1
+        for product in products:
+            for category in categories:
+                if (category in product and product[category] == categories[category]):
+                    pass
+                else:
+                    verity = 0
+            if (verity == 1):
+                availableProduct.append(product)
+            else:
+                verity = 1
+        print(availableProduct)

@@ -20,6 +20,10 @@ services:
     links:
       - db
     build: .
+    ports: 
+      - '5000:5000'
+    expose:
+      - '5000'
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

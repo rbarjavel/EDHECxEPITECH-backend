@@ -79,6 +79,11 @@ class Database:
         command = "SELECT * FROM "  + tableName +  " WHERE Parent_id =" + str(id)
         self.cursor.execute(command)
         return(self.cursor.fetchall())
+    
+    def getMetaCatElement(self, tableName, meta_key, meta_value):
+        command = "SELECT * FROM "  + tableName +  "Meta_key ='" + meta_key + "' AND Meta_value ='" + meta_value + "'" 
+        self.cursor.execute(command)
+        return(self.cursor.fetchall())
 
     def getMetaElements(self, tableName, id, meta_key):
         command = "SELECT * FROM "  + tableName +  " WHERE Parent_id =" + str(id) + " AND Meta_key ='" + meta_key + "'"
