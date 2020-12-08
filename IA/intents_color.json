@@ -1,0 +1,82 @@
+{
+    "intents": [
+        {
+            "tag": "no",
+            "patterns": [
+                " "
+            ],
+            "responses": [
+                "0"
+            ]
+        },
+        {
+            "tag": "rouge",
+            "patterns": [
+                "rouge",
+                "rouges",
+                "bordeau"
+            ],
+            "responses": [
+                "rouge"
+            ]
+        },
+        {
+            "tag": "noir",
+            "patterns": [
+                "noir",
+                "noire",
+                "noirs",
+                "noires"
+            ],
+            "responses": [
+                "noir"
+            ]
+        },
+        {
+            "tag": "bleu",
+            "patterns": [
+                "bleu",
+                "bleue",
+                "bleus",
+                "bleues",
+                "cyan"
+            ],
+            "responses": [
+                "bleu"
+            ]
+        },
+        {
+            "tag": "vert",
+            "patterns": [
+                "vert",
+                "verte",
+                "verts",
+                "vertes"
+            ],
+            "responses": [
+                "vert"
+            ]
+        },
+        {
+            "tag": "jaune",
+            "patterns": [
+                "jaune",
+                "jaunes"
+            ],
+            "responses": [
+                "jaune"
+            ]
+        },
+        {
+            "tag": "gris",
+            "patterns": [
+                "gris",
+                "grise",
+                "grises"
+            ],
+            "responses": [
+                "gris"
+            ]
+        }
+    ]
+}

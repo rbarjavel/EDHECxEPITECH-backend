@@ -1,0 +1,97 @@
+{
+    "intents": [
+        {
+            "tag": "no",
+            "patterns": [
+                " "
+            ],
+            "responses": [
+                "0"
+            ]
+        },
+        {
+            "tag": "robe",
+            "patterns": [
+                "robe",
+                "robes"
+            ],
+            "responses": [
+                "robe"
+            ]
+        },
+        {
+            "tag": "jupe",
+            "patterns": [
+                "jupe",
+                "jupes"
+            ],
+            "responses": [
+                "jupe"
+            ]
+        },
+        {
+            "tag": "pull",
+            "patterns": [
+                "pull",
+                "pulls"
+            ],
+            "responses": [
+                "pull"
+            ]
+        },
+        {
+            "tag": "t-shirt",
+            "patterns": [
+                "t-shirt",
+                "t-shirts",
+                "T-shirt",
+                "Tshirt",
+                "Tshirts",
+                "tshirt"
+            ],
+            "responses": [
+                "t-shirt"
+            ]
+        },
+        {
+            "tag": "jean",
+            "patterns": [
+                "jean",
+                "jeans"
+            ],
+            "responses": [
+                "jean"
+            ]
+        },
+        {
+            "tag": "manteau",
+            "patterns": [
+                "manteau",
+                "manteaux"
+            ],
+            "responses": [
+                "manteau"
+            ]
+        },
+        {
+            "tag": "veste",
+            "patterns": [
+                "veste",
+                "vestes"
+            ],
+            "responses": [
+                "veste"
+            ]
+        },
+        {
+            "tag": "gilet",
+            "patterns": [
+                "gilet",
+                "gilets"
+            ],
+            "responses": [
+                "gilet"
+            ]
+        }
+    ]
+}

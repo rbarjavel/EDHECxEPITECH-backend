@@ -1,0 +1,58 @@
+{
+    "intents": [
+        {
+            "tag": "no",
+            "patterns": [
+                " "
+            ],
+            "responses": [
+                "0"
+            ]
+        },
+        {
+            "tag": "coton",
+            "patterns": [
+                "coton"
+            ],
+            "responses": [
+                "coton"
+            ]
+        },
+        {
+            "tag": "laine",
+            "patterns": [
+                "laine"
+            ],
+            "responses": [
+                "laine"
+            ]
+        },
+        {
+            "tag": "lin",
+            "patterns": [
+                "lin"
+            ],
+            "responses": [
+                "lin"
+            ]
+        },
+        {
+            "tag": "dentelle",
+            "patterns": [
+                "dentelle"
+            ],
+            "responses": [
+                "dentelle"
+            ]
+        },
+        {
+            "tag": "polyester",
+            "patterns": [
+                "polyester"
+            ],
+            "responses": [
+                "polyester"
+            ]
+        }
+    ]
+}

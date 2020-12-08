@@ -1,0 +1,58 @@
+{
+    "intents": [
+        {
+            "tag": "no",
+            "patterns": [
+                " "
+            ],
+            "responses": [
+                "0"
+            ]
+        },
+        {
+            "tag": "XS",
+            "patterns": [
+                " XS "
+            ],
+            "responses": [
+                "XS"
+            ]
+        },
+        {
+            "tag": "S",
+            "patterns": [
+                " S "
+            ],
+            "responses": [
+                "S"
+            ]
+        },
+        {
+            "tag": "M",
+            "patterns": [
+                " M "
+            ],
+            "responses": [
+                "M"
+            ]
+        },
+        {
+            "tag": "L",
+            "patterns": [
+                " L "
+            ],
+            "responses": [
+                "L"
+            ]
+        },
+        {
+            "tag": "XL",
+            "patterns": [
+                " XL "
+            ],
+            "responses": [
+                "XL"
+            ]
+        }
+    ]
+}
