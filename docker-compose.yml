@@ -10,9 +10,9 @@ services:
       MYSQL_PASSWORD: Test1234
       MYSQL_DATABASE: easystock
     ports:
-      - '3306:3306'
+      - '8002:8002'
     expose:
-      - '3306'
+      - '8002'
 
   api:
     depends_on:

@@ -39,3 +39,4 @@ class Product:
             else:
                 verity = 1
         print(availableProduct)
+        return (availableProduct)

@@ -1,3 +1,7 @@
 mariadb
 flask
 requests
+nltk
+pickles
+numpy
+tensorflow

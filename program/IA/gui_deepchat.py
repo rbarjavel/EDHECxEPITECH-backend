@@ -18,17 +18,18 @@ import os
 import shutil
 
 nltk.download('punkt')
+nltk.download('wordnet')
 
 class weltekIA():
     def __init__(self):
         self.lemmatizer = WordNetLemmatizer()
-        self.intent_name = "intents_type.json"
+        self.intent_name = "program/IA/intents_type.json"
         self.intents = json.loads(open(self.intent_name).read())
-        self.model_name = "model_type.h5"
+        self.model_name = "program/IA/model_type.h5"
         self.model = load_model(self.model_name)
-        self.words_name = "words_type.pkl"
+        self.words_name = "program/IA/words_type.pkl"
         self.words = pickle.load(open(self.words_name, 'rb'))
-        self.classes_name = 'classes_type.pkl'
+        self.classes_name = 'program/IA/classes_type.pkl'
         self.classes = pickle.load(open(self.classes_name, 'rb'))
 
     def clean_sentence(self, sentence):
@@ -79,13 +80,13 @@ class weltekIA():
         self.model_name = "model_" + profile + ".h5"
         self.words_name = "words_" + profile + ".pkl"
         self.classes_name = "classes_" + profile + ".pkl"
-        if os.path.exists(self.intent_name):
-            self.intents = json.loads(open(self.intent_name).read())
-            self.model = load_model(self.model_name)
-            self.words = pickle.load(open(self.words_name, 'rb'))
-            self.classes = pickle.load(open(self.classes_name, 'rb'))
+        if os.path.exists('/program/IA/' + self.intent_name):
+            self.intents = json.loads(open('/program/IA/' + self.intent_name).read())
+            self.model = load_model('/program/IA/' + self.model_name)
+            self.words = pickle.load(open('/program/IA/' + self.words_name, 'rb'))
+            self.classes = pickle.load(open('/program/IA/' + self.classes_name, 'rb'))
         else:
-            shutil.copyfile("intents_default.json", self.intent_name)
+            shutil.copyfile("program/IA/intents_type.json", self.intent_name)
             self.intents = json.loads(open(self.intent_name).read())
             self.train_model()
             self.model = load_model(self.model_name)
