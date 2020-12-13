@@ -17,6 +17,7 @@ class IA():
             pred = self.weltek.predict_class(msg, strr)
             res = self.weltek.get_response(pred)
 
-            self.result[strr] = res
+            varr = strr[:1].upper() + strr[1:]
+            self.result[varr] = res
 
         return self.result
