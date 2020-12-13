@@ -8,7 +8,7 @@ from IA.EasyStock import IA
 
 app = Flask(__name__)
 
-@app.route('/api/stores/add', methods=['POST'])
+@app.route('/api/stores/add', methods=['POST', 'GET'])
 def addStores():
     response = request.args
     if ("Store_name" in response):
@@ -18,12 +18,14 @@ def addStores():
     else:
         return(jsonify({'status':'ko'}))
 
-@app.route('/api/product/add', methods=['POST'])
+@app.route('/api/product/add', methods=['POST', 'GET'])
 def addProduct():
     response = request.args
+    print("resp : ", response, file=sys.stderr)
+
     if ("Product_name" in response
         and "Store_id" in response):
-        
+
         product = Product()
         product.createProduct(response['Store_id'], response['Product_name'], response)
         return(jsonify({'status':'ok'}))
@@ -52,7 +54,7 @@ def getWithTags():
             'status':'ko'
         })
 
-@app.route('/api/user/add', methods=['POST'])
+@app.route('/api/user/add', methods=['POST', 'GET'])
 def addUser():
     response = request.args
     if ("User_name" in response and 
