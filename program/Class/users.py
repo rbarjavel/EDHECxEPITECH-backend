@@ -12,10 +12,18 @@ class User:
             "Password": password,
             "Store" : store_id
         }
-        id = self.database.createElement(elements, self.userDatabaseName)
-        for info in metas:
-            self.database.createMeta(info, metas[info], id, self.userDatabaseMetaName)
-        return(id)
+
+        stores = self.database.getAllElements("stores")
+        for store in stores:
+            if (store_id == store["Store_name"]):
+                elements["Store"] = store["id"]
+                id = self.database.createElement(elements, self.userDatabaseName)
+
+                for info in metas:
+                    self.database.createMeta(info, metas[info], id, self.userDatabaseMetaName)
+                return(id)
+
+        return (-84)
 
     def login(self, user_name, password):
         users = self.database.getAllElements(self.userDatabaseName)

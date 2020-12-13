@@ -27,8 +27,11 @@ def addProduct():
         and "Store_id" in response):
 
         product = Product()
-        product.createProduct(response['Store_id'], response['Product_name'], response)
-        return(jsonify({'status':'ok'}))
+        if (product.createProduct(response['Store_id'], response['Product_name'], response) != -84):
+            return(jsonify({'status':'ok'}))
+        else: 
+            return(jsonify({'status':'ko'}))
+
     else:
         return(jsonify({'status':'ko'}))
 
