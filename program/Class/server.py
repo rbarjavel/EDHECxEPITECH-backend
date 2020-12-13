@@ -27,11 +27,8 @@ def addProduct():
         and "Store_id" in response):
 
         product = Product()
-        if (product.createProduct(response['Store_id'], response['Product_name'], response) != -84):
-            return(jsonify({'status':'ok'}))
-        else: 
-            return(jsonify({'status':'ko'}))
-
+        product.createProduct(response['Store_id'], response['Product_name'], response)
+        return(jsonify({'status':'ok'}))
     else:
         return(jsonify({'status':'ko'}))
 
@@ -64,11 +61,14 @@ def addUser():
         "Password" in response and
         "Store" in response):
         user = User()
-        user.createUser(response['User_name'], response['Password'], response['Store'], response)
-
-        return (jsonify({
-            'status':'ok'
-        }))
+        if (user.createUser(response['User_name'], response['Password'], response['Store'], response) != -84):
+            return (jsonify({
+                'status':'ok'
+            }))
+        else:
+            return (jsonify({
+                'status':'ko'
+            }))
     else:
         return (jsonify({
             'status':'ko'
