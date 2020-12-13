@@ -44,6 +44,7 @@ def getWithTags():
         return(jsonify({
             'status':'ok',
             'IA': returnOfIa,
+            'response': response,
             'products': returnOfProduct
         }))
     except:

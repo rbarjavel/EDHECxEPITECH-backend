@@ -27,16 +27,10 @@ class Product:
     def sortProduct(self, categories):
         availableProduct = []
         products = self.getProduct()
-        verity = 1
+
         for product in products:
-            for category in categories:
-                if (category in product and product[category] == categories[category]):
-                    pass
-                else:
-                    verity = 0
-            if (verity == 1):
+            key = product.items() & categories.items()
+            if (key):
                 availableProduct.append(product)
-            else:
-                verity = 1
         print(availableProduct)
         return (availableProduct)
