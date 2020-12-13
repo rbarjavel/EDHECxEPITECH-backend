@@ -70,3 +70,20 @@ def addUser():
         return (jsonify({
             'status':'ko'
         }))
+
+@app.route('/api/user/login', methods=['POST', 'GET'])
+def Login():
+    response = request.args
+    if ("User_name" in response and 
+        "Password" in response):
+        user = User()
+        store = user.login(response["User_name"], response["Password"])
+
+        return (jsonify({
+            'status':'ok',
+            'Store': store
+        }))
+    else:
+        return (jsonify({
+            'status':'ko'
+        }))

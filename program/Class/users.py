@@ -16,3 +16,13 @@ class User:
         for info in metas:
             self.database.createMeta(info, metas[info], id, self.userDatabaseMetaName)
         return(id)
+
+    def login(self, user_name, password):
+        users = self.database.getAllElements(self.userDatabaseName)
+
+        for user in users:
+            if (user["User_name"] == user_name and
+                user["Password"] == password):
+                return (user["Store"])
+
+        return ("error")
