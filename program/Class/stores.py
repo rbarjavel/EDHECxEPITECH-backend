@@ -18,8 +18,9 @@ class Store:
     def getElement(self, store_id):
         stores = self.database.getAllElements(self.storeDatabaseName)
 
+        id = int(store_id)
         for store in stores:
-            if (store["id"] == store_id):
+            if (store["id"] == id):
                 return (store["Store_name"])
 
         return ("error")

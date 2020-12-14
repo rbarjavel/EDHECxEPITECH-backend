@@ -1,4 +1,5 @@
 from Class.database import Database
+from Class.stores import Store
 
 def funVer(e):
     return e["Ver"]
@@ -30,11 +31,15 @@ class Product:
     def sortProduct(self, categories):
         availableProduct = []
         products = self.getProduct()
+        store = Store()
 
         for product in products:
             key = product.items() & categories.items()
             if (key):
                 product["Ver"] = len(key)
+                
+                product["Store_name"] = store.getElement(product["Store_id"])
+
                 availableProduct.append(product)
         print(availableProduct)
 
