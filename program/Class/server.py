@@ -63,7 +63,8 @@ def addUser():
         user = User()
         if (user.createUser(response['User_name'], response['Password'], response['Store'], response) != -84):
             return (jsonify({
-                'status':'ok'
+                'status':'ok',
+                'store_name':response['Store']
             }))
         else:
             return (jsonify({
