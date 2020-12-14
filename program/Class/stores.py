@@ -14,3 +14,12 @@ class Store:
         for info in metas:
             self.database.createMeta(info, metas[info], id, self.storeDatabaseMetaName)
         return(id)
+
+    def getElement(self, store_id):
+        stores = self.database.getAllElements(self.storeDatabaseName)
+
+        for store in stores:
+            if (store["id"] == store_id):
+                return (store["Store_name"])
+
+        return ("error")

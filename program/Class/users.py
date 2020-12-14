@@ -1,4 +1,5 @@
 from Class.database import Database
+from Class.stores import Store
 
 class User:
     def __init__(self):
@@ -31,6 +32,17 @@ class User:
         for user in users:
             if (user["User_name"] == user_name and
                 user["Password"] == password):
-                return (user["Store"])
+
+                store = Store()
+                stores_name = store.getElement(user["Store"])
+
+                if (stores_name == "error"):
+                    return ("error")
+                
+                value = dict()
+                value["Store_name"] = stores_name
+                value["Store"] = user["Store"]
+
+                return (value)
 
         return ("error")

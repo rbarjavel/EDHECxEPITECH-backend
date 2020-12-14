@@ -84,7 +84,8 @@ def Login():
 
         return (jsonify({
             'status':'ok',
-            'Store': store
+            'Store': store["Store_name"],
+            'Store_id': store["Store"]
         }))
     else:
         return (jsonify({

@@ -1,5 +1,8 @@
 from Class.database import Database
 
+def funVer(e):
+    return e["Ver"]
+
 class Product:
     def __init__(self):
         self.productDatabaseName = "products"
@@ -31,6 +34,10 @@ class Product:
         for product in products:
             key = product.items() & categories.items()
             if (key):
+                product["Ver"] = len(key)
                 availableProduct.append(product)
         print(availableProduct)
+
+        availableProduct.sort(key=funVer, reverse=True)
+
         return (availableProduct)
